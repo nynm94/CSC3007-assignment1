@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSC3007 Information Visualization</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CSC3007 Information Visualization">
+    <meta name="author" content="Chi-Loong (www.vslashr.com)">
+    <meta name="google-site-verification" content="..." />
+
+    <meta property="og:title" content="CSC3007 Information Visualization">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://chi-loong.github.io/CSC3007/">
+    <meta property="og:description" content="CSC3007 Information Visualization">
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@vslashr" />
+    <meta name="twitter:creator" content="@chiloong" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css"/>
+</head>
+<body>
+
+<div class="container">
+  <h6 class="text-center px-3 py-3"><a href="index.html">Schedule</a> | <a href="objectives.html">Objectives</a></h6>
+    
+  <div class="row">
+    <div class="col-md-12">
+        <h4>Assignments</h4>
+        <table id="csc3007" class="table table-striped table-bordered" width="100%"></table>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+<script src="js/papaparse.min.js"></script>
+<script>
+
+Papa.parse("data/csc3007.csv", {
+    delimiter: ",",
+    header:true,
+    download:true,
+    complete: function(results) {
+    
+        var data = results.data.map(function(d) {return [d.fullname, d.github]});
+        
+        $("#csc3007").DataTable({
+            data: data,
+            responsive: true,
+            columns: [
+                { title: "Full Name" },
+                { title: "Github Username" },
+                { title: "Assignment1", orderable: false },
+                { title: "Assignment2", orderable: false },
+                { title: "Assignment3", orderable: false },
+                { title: "Assignment4", orderable: false },
+                { title: "Assignment5", orderable: false }
+            ],
+            pageLength: 20,
+            order: [[0, "asc"]],
+            columnDefs: [
+            {
+                targets: 2,
+                data: "Assignment1",
+                render: function ( data, type, row, meta ) {
+                  return '<a href="https://' + row[2] + '.github.io/CSC3007-assignment1/">Assignment 1</a>';
+                }
+            },
+            {
+                targets: 3,
+                data: "Assignment2",
+                render: function ( data, type, row, meta ) {
+                  return '<a href="https://' + row[2] + '.github.io/CSC3007-assignment2/">Assignment 2</a>';
+                }
+            },
+            {
+                targets: 4,
+                data: "Assignment3",
+                render: function ( data, type, row, meta ) {
+                  return '<a href="https://' + row[2] + '.github.io/CSC3007-assignment3/">Assignment 3</a>';
+                }
+            },
+            {
+                targets: 5,
+                data: "Assignment4",
+                render: function ( data, type, row, meta ) {
+                  return '<a href="https://' + row[2] + '.github.io/CSC3007-assignment4/">Assignment 4</a>';
+                }
+            },
+            {
+                targets: 6,
+                data: "Assignment5",
+                render: function ( data, type, row, meta ) {
+                  return '<a href="https://' + row[2] + '.github.io/CSC3007-assignment5/">Assignment 5</a>';
+                }
+            }
+            ]
+        });
+    }
+})
+</script>
+</body>
+</html>
