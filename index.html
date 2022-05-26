@@ -1,370 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>CSC3007 Information Visualization</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CSC3007 Information Visualization">
-    <meta name="author" content="Chi-Loong (www.vslashr.com)">
-    <meta name="google-site-verification" content="..." />
-
-    <meta property="og:title" content="CSC3007 Information Visualization">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://chi-loong.github.io/CSC3007/">
-    <meta property="og:description" content="CSC3007 Information Visualization">
-
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@vslashr" />
-    <meta name="twitter:creator" content="@chiloong" />
-
+    <style>
+        #data td, h6
+        {
+            text-align: center; 
+            vertical-align: middle;
+        }
+    </style>
+    <title>CSC3007 Assignment 1</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
+    <div>
+        <h6 id="updated_datetime"></h6>
+        <table id="data" class="table table-dark"></table>
+    </div>
 
-<div class="container">
-  <h1 class="text-center display-4 px-5 py-5">CSC3007 Information Visualization (2022)</h1>
-  <h6 class="text-center px-3 py-3"><a href="index.html">Schedule</a> | <a href="objectives.html">Objectives</a> | <a href="class2022.html">2022 Class</a></h6>
-  
-  <div class="row">
-    <div class="col-md-2">
-        <h4>Week 1</h4>
-        <h6 class="text-info">Week of 9th May</h6>
-    </div>
-    <div class="col-md-10">
-        <div class="row">
-            <div class="col-md-3">
-                <h4>Intro to Info Viz</h4>
-                <h6 class="text-info">11th May (Mon)</h6>
-            </div>
-            <div class="col-md-9">
-                <p>Lecture by Prof Alex. Introduction to Information Visualization. Why study it?</p>
-            </div>
-            <div class="col-md-3">
-                <h4>No lab</a></h4>
-                <h6 class="text-info">12th May (Thurs)</h6>
-            </div>
-            <div class="col-md-9">
-                <p>No lab for 1st week of course.</p>
-            </div>
-        </div>
-    </div>
-  </div>
-  <hr/>
-  
-  <div class="row">
-    <div class="col-md-2">
-        <h4>Week 2</h4>
-        <h6 class="text-info">Week of 16th May</h6>
-    </div>
-    <div class="col-md-10">
-        <div class="row">
-            <div class="col-md-3">
-                <h4>Visual perspectives</h4>
-                <h6 class="text-info">18th May (Wed)</h6>
-            </div>
-            <div class="col-md-9">
-                <p>Lecture by Prof Alex. Visual perspectives and mechanics of visual perceptions.</p>
-            </div>
-            <div class="col-md-3">
-                <h4><a href="week2b.html" target="_blank">Intro + big picture</a></h4>
-                <h6 class="text-info">19th May (Thurs)</h6>
-            </div>
-            <div class="col-md-9">
-                <p>Course requirements and expectations. An overview of data visualization with the what(data) - why(task) - how(idiom) model. Workshop on big picture questions.</p>
-            </div>
-        </div>
-    </div>
-  </div>
-  <hr/>
-  
-  <div class="row">
-    <div class="col-md-2">
-        <h4>Week 3</h4>
-        <h6 class="text-info">Week of 23rd May</h6>
-    </div>
-    <div class="col-md-10">
-        <div class="row">
-            <div class="col-md-3">
-                <h4><a href="week3a.html" target="_blank">All about Data (what)</a></h4>
-                <h4><a href="week3a-2.html" target="_blank">Literature Review</a></h4>
-                <h6 class="text-info">25th May (Wed)</h6>
-            </div>
-            <div class="col-md-9">
-                <p>Dataset types &mdash; tables, charts, networks, fields, geometry, hiereachies. Data scales &mdash; nominal, ordinal, interval, ratio. Data ordering &mdash; sequential, diverging, cyclic.</p>
-            </div>
-            <div class="col-md-3">
-                <h4><a href="week3b.html" target="_blank">SVG basics</a></h4>
-                <h6 class="text-info">26th May (Thurs)</h6>
-            </div>
-            <div class="col-md-9">
-                <p>Introduction to how the web draws graphics, and the SVG specification. <a href="extra1.html">HTML/CSS/JS/Git</a> review. A discussion on <a href="extra2.html">web dev perspectives</a>.</p>
-            </div>
-            <div class="col-md-3">
-                <h5><a class="text-success" href="assignment1.html" target="_blank">Assignment 1</a></h5>
-                <h6 class="text-info">Deadline 9th June 2359hrs (Thurs)</h6>
-            </div>
-            <div class="col-md-9">
-                <p>Connect to a simple endpoint API and print out the data in a table. Basic refresher on skills that you will need moving forward.</p>
-            </div>
-        </div>
-    </div>
-  </div>
-  <hr/>
+    <!-- Load API Script-->
+    <script>
+        // api url
+        const api_url = "https://api.data.gov.sg/v1/environment/psi";
+        
+        // get table properities
+        var myTable = document.getElementById('data')
 
-  <div class="row">
-    <div class="col-md-2">
-        <h4>Week 4</h4>
-        <h6 class="text-info">Week of 30th May</h6>
-    </div>
-    <div class="col-md-10">
-        <div class="row">
-            <div class="col-md-3">
-                <h4><a href="week4a.html" target="_blank">Task abstraction (why)</a></h4>
-                <h6 class="text-info">1st Jun (Wed)</h6>
-            </div>
-            <div class="col-md-9">
-                <p>Why are people using data viz? We'll analyze by looking at a high-level framework of actions and targets. Actions: Analyze, search, query, etc. Targets: Trends , outliers , features, etc.</p>
-            </div>
-            <div class="col-md-3">
-                <h4><a href="week5b.html" target="_blank">Intro to D3</a></h4>
-                <h6 class="text-info">2nd Jun (Thurs)</h6>
-            </div>
-            <div class="col-md-9">
-                <p>Introduction to D3 (Data Driven Documents), the defacto data visualization library for the web. Toolchains and other libraries. Selections, domains, ranges, axes. Enter, update, exit - design pattern for glassy transitions.</p>
-            </div>
-        </div>
-    </div>
-  </div>
-  <hr/>
-  
-  <div class="row">
-    <div class="col-md-2">
-        <h4>Week 5</h4>
-        <h6 class="text-info">Week of 6th Jun</h6>
-    </div>
-    <div class="col-md-10">
-        <div class="row">
-            <div class="col-md-3">
-                <h4><a href="week5a.html" target="_blank">Visualization validation</a></h4>
-                <h6 class="text-info">8th Jun (Wed)</h6>
-            </div>
-            <div class="col-md-9">
-                <p>4 levels of visualization validation:  domain/problem &rarr; data/task abstraction &rarr; viz idiom &rarr; algorithm / technology. Case studies and examples.</p>
-            </div>
-            <div class="col-md-3">
-                <h4><a href="week5b.html" target="_blank">D3: Geo Projection / Choropleth</a></h4>
-                <h6 class="text-info">9th Jun (Thurs)</h6>
-            </div>
-            <div class="col-md-9">
-                <p>D3's geo projection library. GeoJSON and TopoJSON formats. Choropleth viz (D3).</p>
-            </div>
-        </div>
-    </div>
-  </div>
-  <hr/>
-  
-  <div class="row">
-    <div class="col-md-2">
-        <h4>Week 6</h4>
-        <h6 class="text-info">Week of 13th Jun</h6>
-    </div>
-    <div class="col-md-10">
-        <div class="row">
-            <div class="col-md-3">
-                <h4><a href="week6a.html" target="_blank">Marks, channels: Applied Perception</a></h4>
-                <h6 class="text-info">15th Jun (Wed)</h6>
-            </div>
-            <div class="col-md-9">
-                <p>Defining how visualizations are composed of marks and channels. Analyzing the effectiveness of visual channels through accuracy, discriminability, salience, separability.</p>
-            </div>
-            <div class="col-md-3">
-                <h4>Leaflet, 2.5D/3D</h4>
-                <h6 class="text-info">16th Jun (Thurs)</h6>
-            </div>
-            <div class="col-md-9">
-                <p>Leaflet, 2.5D and 3D geospatial viz. Platform perspectives: MapboxGL, Cesium, ArcGIS, deck.gl.</p>
-            </div>
-        </div>
-    </div>
-  </div>
-  <hr/>
+        // Defining async function
+        async function getAPI(url) {
+            // Storing response
+            const response = await fetch(url);
+            
+            // Storing data in form of JSON
+            var data = await response.json();
+            tableData = data.items[0].readings
+            // Get the updated time stamp from the API
+            var updateDateTime = data.items[0].update_timestamp
+            // Convert string into Date 
+            updateDateTime = new Date(updateDateTime)
+            var options = {year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: false};
+            // Get the h4 of updated time
+            var getTime = document.getElementById('updated_datetime')
+            getTime.innerHTML = 'Last updated at ' + updateDateTime.toLocaleDateString("en-US", options)
 
-  <div class="row">
-    <div class="col-md-2">
-        <h4>Week 7</h4>
-        <h6 class="text-info">Week of 20th Jun</h6>
-    </div>
-    <div class="col-md-10">
-        <h4>Recess</h4>
-    </div>
-  </div>
-  <hr/>
+            // Create the table headings
+            let tab = 
+                `<tr>
+                    <th>Metric</th>
+                    <th>West</th>
+                    <th>National</th>
+                    <th>East</th>
+                    <th>Central</th>
+                    <th>South</th>
+                    <th>North</th>
+             `
+            myTable.innerHTML = tab
 
-  <div class="row">
-    <div class="col-md-2">
-        <h4>Week 8</h4>
-        <h6 class="text-info">Week of 27th Jun</h6>
-    </div>
-    <div class="col-md-10">
-        <div class="row">
-            <div class="col-md-3">
-                <h4><a href="week8a.html" target="_blank">Color</a></h4>
-                <h6 class="text-info">29th Jun (Wed)</h6>
-            </div>
-            <div class="col-md-9">
-                <p>Color: perception, specification and use. How the eye sees color. Colorspaces. Implications for color use as a visualization channel.</p>
-            </div>
-            <div class="col-md-3">
-                <h4>Viz critiques + proposal</h4>
-                <h6 class="text-info">30th Jun (Thurs)</h6>
-            </div>
-            <div class="col-md-9">
-                <p>Visualization critiques and proposal presentation (milestone 1)</p>
-            </div>
-            <!-- <div class="col-md-3"> -->
-                <!-- <h5><a class="text-success" href="assignment4.html" target="_blank">Assignment 4</a></h5> -->
-                <!-- <h6 class="text-info">Deadline 7th Apr 12pm (Thurs)</h6> -->
-            <!-- </div> -->
-            <!-- <div class="col-md-9"> -->
-                <!-- <p>A simple Singapore choropleth viz mashing up population with sub-district data.</p> -->
-            <!-- </div> -->
-        </div>
-    </div>
-  </div>
-  <hr/>
-
-  <div class="row">
-    <div class="col-md-2">
-        <h4>Week 9</h4>
-        <h6 class="text-info">Week of 4th Jul</h6>
-    </div>
-    <div class="col-md-10">
-        <div class="row">
-            <div class="col-md-3">
-                <h4><a href="week9a.html" target="_blank">Chart types: tabular</a></h4>
-                <h6 class="text-info">6th Jul (Wed)</h6>
-            </div>
-            <div class="col-md-9">
-                <p>A deeper dive into various different visualizations that are used for tabular and hierarchical data. Bar, line, scatterplot, streams, etc. Packed circles, treemaps, dendrograms, etc. Use case examples.</p>
-            </div>
-            <div class="col-md-3">
-                <h4>Viz critiques + proposal</h4>
-                <h6 class="text-info">7th Jul (Thurs)</h6>
-            </div>
-            <div class="col-md-9">
-                <p>Visualization critiques and proposal presentation (milestone 1)</p>
-            </div>
-        </div>
-    </div>
-  </div>
-  <hr/>
-
-  <div class="row">
-    <div class="col-md-2">
-        <h4>Week 10</h4>
-        <h6 class="text-info">Week of 11th Jul</h6>
-    </div>
-    <div class="col-md-10">
-        <div class="row">
-            <div class="col-md-3">
-                <h4><a href="week10a.html" target="_blank">Chart types: hierarchical / networks</a></h4>
-                <h6 class="text-info">13th Jul (Wed)</h6>
-            </div>
-            <div class="col-md-9">
-                <p>A deeper dive into various different visualizations that are used for networks and hierarchies. Force directed networks, treemaps, sankeys and arc diagrams. Use case examples.</p>
-            </div>
-            <div class="col-md-3">
-                <h4>TBD</h4>
-                <h6 class="text-info">15th Jul (Thurs)</h6>
-            </div>
-            <div class="col-md-9">
-                <p>TBD</p>
-            </div>
-        </div>
-    </div>
-  </div>
-  <hr/>
-  
-  <div class="row">
-    <div class="col-md-2">
-        <h4>Week 11</h4>
-        <h6 class="text-info">Week of 18th Jul</h6>
-    </div>
-    <div class="col-md-10">
-        <div class="row">
-            <div class="col-md-3">
-                <h4><a href="week11a.html" target="_blank">Manipulate, facet, reduce</a></h4>
-                <h6 class="text-info">20th Jul (Wed)</h6>
-            </div>
-            <div class="col-md-9">
-                <p>Techniques to consider for improving visualizations. Manipulating views - changes, selection and navigation. Faceting and layers. Focus + context (embedding). </p>
-            </div>
-            <div class="col-md-3">
-                <h4>Rules of Thumb</h4>
-                <h6 class="text-info">21st Jul (Thurs)</h6>
-            </div>
-            <div class="col-md-9">
-                <p>Guidelines on 3D use, animation and interaction. Latency and feedback. A summary and future perspectives.</p>
-            </div>
-        </div>
-    </div>
-  </div>
-  <hr/>
-
-  <div class="row">
-    <div class="col-md-2">
-        <h4>Week 12</h4>
-        <h6 class="text-info">Week of 25th Jul</h6>
-    </div>
-    <div class="col-md-10">
-        <div class="row">
-            <div class="col-md-3">
-                <h4>Quiz Assessment</h4>
-                <h6 class="text-info">27th Jul (Wed)</h6>
-            </div>
-            <div class="col-md-9">
-                <p>Individual quiz assessment for this course (35%)</p>
-            </div>
-            <div class="col-md-3">
-                <h4>Presentations</h4>
-                <h6 class="text-info">28th Jul (Thurs)</h6>
-            </div>
-            <div class="col-md-9">
-                <p>Final project presentations (part I)</p>
-            </div>
-        </div>
-    </div>
-  </div>
-  <hr/>
-
-  <div class="row">
-    <div class="col-md-2">
-        <h4>Week 13</h4>
-        <h6 class="text-info">Week of 1st Aug</h6>
-    </div>
-    <div class="col-md-10">
-        <div class="row">
-            <div class="col-md-3">
-                <h4>Project Development</h4>
-                <h6 class="text-info">3rd Aug (Wed)</h6>
-            </div>
-            <div class="col-md-9">
-                <p>Project Development. Consultation by request. No lecture.</p>
-            </div>
-            <div class="col-md-3">
-                <h4>Presentations</h4>
-                <h6 class="text-info">4th Aug (Thurs)</h6>
-            </div>
-            <div class="col-md-9">
-                <p>Final project presentations (part II)</p>
-            </div>
-        </div>
-    </div>
-  </div>
-
-  <h6 class="text-center px-3 py-3">By Chan Chi-Loong | ww.viz.sg | www.vslashr.com</h6>
-</div>
-
+            // Create the table data
+            for (const [key, value] of Object.entries(tableData)) {
+                var tr = myTable.insertRow(-1)
+                var tabCell = tr.insertCell(-1)
+                tabCell.innerHTML = key
+                
+                Object.keys(value).forEach(function(heading) {
+                    var heading = heading
+                    var rowValue = value[heading]
+                    var tabCell = tr.insertCell(-1)
+                    tabCell.innerHTML = rowValue
+                })
+            }
+        }
+        
+        // Calling that async function
+        getAPI(api_url);
+    </script>
 </body>
 </html>
