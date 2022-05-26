@@ -38,7 +38,7 @@
             // Convert string into Date 
             updateDateTime = new Date(updateDateTime)
             var options = {year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: false};
-            // Get the h4 of updated time
+            // Get the h6 of updated time
             var getTime = document.getElementById('updated_datetime')
             getTime.innerHTML = 'Last updated at ' + updateDateTime.toLocaleDateString("en-US", options)
 
