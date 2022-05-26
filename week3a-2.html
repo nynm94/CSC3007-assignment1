@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Literature Review</title>
+
+        <meta name="description" content="02.526 Interactive Data Viz, Introduction">
+        <meta name="author" content="Chan Chi-Loong, V/R">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/night.css" id="theme">
+        <link rel="stylesheet" href="css/style.css">
+        
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                
+                <section data-state="alert" data-transition="zoom">
+                    <h1 class="shadowfont white">Important figures</h1>
+                    <h3>Aka literature review</h3>
+                </section>
+
+                <section>
+                    <h3><a href="https://en.wikipedia.org/wiki/Jacques_Bertin" target="_blank">Jacques Bertin</a></h3>
+                    <h5>1918-2010</h5>
+                    <p><i>Semiology of Graphics (1967)</i></p>
+                    <p>Key ideas:</p>
+                    <ul>
+                        <li><a href="https://en.wikipedia.org/wiki/Visual_variable" target="_blank">Visual variables</a> (marks)</li>
+                        <li>Early taxinomy of network layouts - arc diagram, treemap, etc.</li>
+                        <li><a href="https://www.aviz.fr/diyMatrix/" target="_blank">Bertin's matrix</a> (precursor to the modern heatmap!)</li>
+                        <li>Interaction ideas (before computers!) on "reordering" rows before presenting results</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3><a href="https://en.wikipedia.org/wiki/Edward_Tufte" target="_blank">Edward Tufte</a></h3>
+                    <p><i>Principles for visualizing quantitative information (1983)</i></p>
+                    <p>Key ideas:</p>
+                    <ul>
+                        <li><a href="https://en.wikipedia.org/wiki/Small_multiple" target="_blank">Small multiples</a> (facets). Well-known for <a href="https://en.wikipedia.org/wiki/Sparkline" target="_blank">sparklines</a></li>
+                        <li><a href="https://infovis-wiki.net/wiki/Data-Ink_Ratio" target="_blank">Data-ink ratio</a></li>
+                        <li><a href="https://en.wikipedia.org/wiki/Chartjunk" target="_blank">Chartjunk</a></li>
+                        <li>
+                            <p><a href="https://www.linkedin.com/pulse/edward-tuftes-six-principles-graphical-integrity-radhika-raghu" target="_blank">Principles of graphical integrity</a></p>
+                            <p class="smallfont">Bonus links: <a href="https://viz.wtf/" target="_blank">WTF Viz</a></p>
+                            <p class="smallfont">Bonus example: <a href="https://indianexpress.com/article/india/twitter-abuzz-over-bjps-graph-on-fuel-prices-congress-fixes-it-5349311/" target="_blank">Truth of hike in petroleum prices</a></p>
+                        </li>
+                        <li>Tufte <b>hates</b> pie charts with a passion</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3><a href="https://en.wikipedia.org/wiki/Hans_Rosling" target="_blank">Hans Rosling (1948-2017)</a></h3>
+                    <p>TrendAnalyzer and <a href="https://www.gapminder.org/" target="_blank">Gapminder</a></p>
+                    <p>Key ideas:</p>
+                    <ul>
+                        <li>Popularized data visualization and animation</li>
+                        <li><a href="http://www.gapminder.org/world" target="_blank">Gapminder World</a></li>
+                        <li><a href="https://www.ted.com/talks/hans_rosling_the_best_stats_you_ve_ever_seen" target="_blank">TED talk: Hans Rosling - the best stats you've ever seen</a></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3><a href="https://en.wikipedia.org/wiki/Ben_Shneiderman" target="_blank">Ben Shneiderman</a></h3>
+                    <p>Human Computer Interface, information visualization</p>
+                    <p>Key ideas:</p>
+                    <ul>
+                        <li><a href="http://www.cs.umd.edu/~ben/goldenrules.html" target="_blank">Eight golden rules for interface design</a></li>
+                        <li><a href="https://en.wikipedia.org/wiki/Treemapping" target="_blank">Recursive treemaps</a> ObservableHQ <a href="https://observablehq.com/@d3/treemap" target="_blank">example</a></li>
+                        <li><a href="https://homes.cs.washington.edu/~jheer/files/idfva-draft.pdf" target="_blank">Taxonomy of interactive dynamics for visual analysis</a></li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h3><a href="https://en.wikipedia.org/wiki/Ben_Shneiderman" target="_blank">Leland Wilkinson</a></h3>
+                    <p><i>Grammar of Graphics, 1999</i></p>
+                    <p>Key ideas:</p>
+                    <ul>
+                        <li>Influential in describing a framework for charting graphs.</li>
+                        <li>Influenced R's ggplot2, Python's ggplot libraries.</li>
+                        <li><p>Readings:</p>
+                            <p class="smallfont"><a href="https://codewords.recurse.com/issues/six/telling-stories-with-data-using-the-grammar-of-graphics" target="_blank">Telling stories with data using the grammar of graphics</a>, Liz Sander</p>
+                            <p class="smallfont"><a href="https://medium.com/tdebeus/think-about-the-grammar-of-graphics-when-improving-your-graphs-18e3744d8d18" target="_blank">Think about the grammar of graphics when improving your graphs</a>, Thomas de Beus</p>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3><a href="https://en.wikipedia.org/wiki/Hadley_Wickham" target="_blank">Handley Wickham</a>, <a href="https://en.wikipedia.org/wiki/Mike_Bostock" target="_blank">Mike Bostock</a></h3>
+                    <p>Ggplot2 (Handley) and  D3 (Bostock)</p>
+                    <p>Bostock is also the founder of <a href="https://observablehq.com/" target="_blank">Observable HQ</a></p>
+                    <p class="smallfont">This <a href="https://archive.nytimes.com/www.nytimes.com/interactive/2012/02/13/us/politics/2013-budget-proposal-graphic.html" target="_blank">NYT visualization</a> by Bostock started me down my rabbit hole.</p>
+                </section>
+
+                <section>
+                    <h3>Others: (mainly blogs)</h3>
+                    <p><a href="https://flowingdata.com/" target="_blank">Flowing Data</a> (Nathan Yau)</p>
+                    <p><a href="https://informationisbeautiful.net/" target="_blank">Information is Beautiful</a> (David McCandless)</p>
+                    <p><a href="https://www.visualisingdata.com/" target="_blank">Visualizing Data</a> (Andy Kirk)</p>
+                    <p><a href="https://junkcharts.typepad.com/" target="_blank">Junk Charts</a> (Kaiser Fung)</p>
+                    <p><a href="https://alignedleft.com/work/d3-book" target="_blank">Interactive Data Visualization</a> (book) (Scott Murray)</p>
+                </section>
+                
+                <section>
+                    <h2>Questions?</h2>
+                    <div class="plain">
+                        <div class="rotate-icon"><a href="http://www.vslashr.com"><img width="100" src="img/VslashR_logo_white.svg"></a></div>
+                    </div>
+                    <p><small>Chi-Loong | V/R</small></p>
+                </section>
+
+            </div>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>

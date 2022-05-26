@@ -109,14 +109,14 @@
                     <h2>Data Types 3</h2>
                     <p><b>Position / Regions</b></p>
                     <ul>
-                        <li>A position is a location in space (typically 2D or 3D)</li>
+                        <li>A position is a location in space (typically 2D or 3D). Each position is a discrete point</li>
                         <li>May be subject to projections</li>
                         <li>E.g. a district on a map, a 3D architectural diagram</li>
                     </ul>
-                    <p><b>Fields / Grids</b></p>
+                    <p><b>Fields / Grids </b></p>
                     <ul>
-                        <li>A <a href="https://en.wikipedia.org/wiki/Regular_grid" target="_blank">grid</a> specifies how data is sampled geometrically / topologically</li>
-                        <li>Necessary for sampling continuous data</li>
+                        <li>A <a href="https://en.wikipedia.org/wiki/Regular_grid" target="_blank">grid</a> specifies how data is sampled topologically</li>
+                        <li>Sampling of continuous data</li>
                         <li>E.g. Earth map tiling, CT map scans</li>
                     </ul>
                 </section>
@@ -146,17 +146,24 @@
                 </section>
 
                 <section>
+                    <h2>Other data considerations</h2>
+					<ul>
+						<li>Data availability: Static or dynamic?</li>
+						<li>Data hierarchies: Is the data nested?</li>
+						<li>Data scales: Categorical or quantitative?</li>
+    				</ul>
+                </section>
+
+                <section>
                     <h2>Data Availability</h2>
                     <p>Static or dynamic?</p>
                 </section>
 
                 <section>
                     <h2>Data Hierarchies</h2>
-                    <p>More on <a href="https://github.com/d3/d3-hierarchy" target="_blank">hierarchies</a> in D3</p>
-                    <p>Hierarchical datasets lend themselves very well to visualizations like dendrograms, trees, treemaps, packed circles.</p>
-                    <hr/>
-                    <p class="smallfont">Sample <a href="https://bl.ocks.org/mbostock/e9ba78a2c1070980d1b530800ce7fa2b" target="_blank">dendrogram</a> and <a href="https://bl.ocks.org/mbostock/7607535">packed circle</a> (flare.json)</p>
-                    <p class="smallfont">We'll talk more about specific visualization idioms in a later lecture.</p>
+					<p>Is the data tabular, but nested like a tree?</p>
+                    <p>E.g. Hierarchical data in a <a href="https://bl.ocks.org/mbostock/e9ba78a2c1070980d1b530800ce7fa2b" target="_blank">dendrogram</a> (flare.json)</p>
+                    <p>We'll talk more specifically about hierarcial visualization idioms in a later lecture.</p>
                 </section>
 
                 <section>
@@ -220,7 +227,6 @@
                 <section>
                     <h3>So what scale of measure is each attribute?</h3>
                     <img src="img/carpark_table.jpg"/>
-                    <p class="smallfont">More reading: <a href="https://statisticalanalysisconsulting.com/is-time-nominal-ordinal-interval-or-ratio-is-it-categorical-or-continuous/" target="_blank">Is time nominal, ordinal, interval or ratio? Is it categorical or continuous?</a> Peter Flom, Statistical Analysis Consulting</p>
                 </section>
 
                 <section>
@@ -234,10 +240,10 @@
                 <section>
                     <section>
                         <h3>Dashboard example</h3>
-                        <img src="img/ArcGIS-screenshot.png">
+                        <a href="img/ArcGIS-screenshot.png"><img src="img/ArcGIS-screenshot.png"></a>
                     </section>
                     <section>
-                        <p><a href="https://viz.vslashr.com/mogul/" target="_blank">Mogul UX tests</p>
+                        <p><a href="https://viz.vslashr.com/mogul/scatterplottest-1a.html" target="_blank">Data &rarr; scatterplot</p>
                     </section>
                 </section>
 

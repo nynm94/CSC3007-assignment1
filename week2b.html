@@ -54,7 +54,7 @@
                 <section>
                     <h2>Current lives</h2>
                     <p>I have taught two semesters of interactive data visualization at SUTD's HASS <a href="https://chi-loong.github.io/HASS02.526/">masters' course</a>.</p>
-                    <p>U have taught at code schools like General Assembly and SGCodeCampus on visualization.</p>
+                    <p>I have also taught at code schools like General Assembly and SGCodeCampus on visualization.</p>
                     <p>I also head up product at start-up <a href="https://www.mogul.sg/">Mogul.sg</a> managing product design + dev.</p>
                 </section>
                 
@@ -97,7 +97,7 @@
                     <h3>On technology</h3>
                     <p>Visualizations can be built with all kinds of software tool / cloud-based platforms.</p>
                     <p>However, for an interactive visualization course I will going through how to do it natively for the web.</p>
-                    <p>This namely means using <a href="https://d3js.org/">D3 (Data Driven Documents)</a>, the defacto data visualization library for the web.</p>
+                    <p>We'll be using <a href="https://d3js.org/">D3 (Data Driven Documents)</a>, the defacto data visualization library for the web.</p>
                 </section> 
 
                 <section>
@@ -229,6 +229,175 @@
                     <li>What resource limitations are there?</li>
                     </ul>
                 </section>
+				
+                <section data-state="alert" data-transition="zoom">
+                    <h1 class="shadowfont white">Big picture questions</h1>
+                    <h3>Perspectives to further think about</h3>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Why have a human in the decision making loop?</h3>
+                    </section>
+
+                    <section>
+                        <p>Visualizations allow people to analyze data when they don't know exactly what questions need to be asked in advance.</p>
+                        <p>Machine learning allows for automation of repeated tasks, but these tasks need to specified (to a certain extent).</p>
+                    </section>
+                    
+                    <section>
+                        <img src="img/SchoemakerHumanVsComputer.jpg" />
+                        <p class="smallfont">Paul Schoemaker and Phillip Tetlock, <a href="https://sloanreview.mit.edu/article/building-a-more-intelligent-enterprise/">Building a More Intelligent Enterprise</a></p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Why have a computer in the loop?</h3>
+                    </section>
+
+                    <section>
+                        <p>Speed and data size. Huge amounts of data can be processed and displayed in real-time that wouldn't be feasible for human beings to do.</p>
+                        <p>Computer interfaces also allow new forms of interactivity in a visualization.</p>
+                    </section>
+                </section>
+                
+                <section>
+                    <section>
+                        <h3>Why use an external representation?</h3>
+                    </section>
+
+                    <section>
+                        <p>Duh. Human beings have been using maps and diagrams for millenia to surpass our own internal cognition and memory.</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Why depend on vision?</h3>
+                    </section>
+
+                    <section>
+                        <p>Because the visual system provides a very high bandwidth channel to our brains.</p>
+                        <p>Even though we can only see a tiny part of our visual field in high resolution at any point, our brains fill in the rest. We are good at seeing the big picture.</p>
+                        <p><i>Sonification</i> has never taken off, as sound is not good at providing overviews of large information spaces compared with vision. We think of sound as sequential.</p>
+                        <p>Taste, smell, and haptic touch are even more limited in terms of communicating abstract information.</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Why show data in detail?</h3>
+                    </section>
+
+                    <section>
+                        <p>Visualization helps people understand the dataset structure better than only seeing the statistic summary of it.</p>
+                        <p><a href="https://en.wikipedia.org/wiki/Anscombe%27s_quartet" target="_blank">Anscombe's Quartet</a> is an extremely powerful example why.</p>
+                        <p class="smallfont"><a href="https://en.wikipedia.org/wiki/Frank_Anscombe" target="_blank">Francis John Abscombe</a> (1918-2001)</p>
+                    </section>
+                    
+                    <section>
+                        <img src="img/anscombe_quartet_data.jpg" />
+                    </section>
+                    
+                    <section>
+                        <img src="img/anscombe_quartet_charts.jpg" />
+                    </section>
+                    
+                    <section>
+                        <video controls width="600">
+                            <source src="img/datasaurus.mp4"
+                                    type="video/mp4">
+                        </video>
+                        <p>A more recent example: <a href="https://www.autodesk.com/research/publications/same-stats-different-graphs" target="_blank">Datasaurus dozen</a></p>
+                        <p class="smallfont">"Same Stats, Different Graphs: Generating Datasets with Varied Appearance and Identical Statistics through Simulated Annealing" (Justin Matejka, George Fitzmaurice, 2017)</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Why use interactivity?</h3>
+                    </section>
+
+                    <section>
+                        <p>The bigger and more complex the dataset, the harder it is to show it all at once given the limitations of both people and display.</p>
+                        <p>Computer systems allow us new viz idioms by allowing interaction, changing the view when an action (search, filter, etc.) is taken.</p>
+                        <p>Interactivity often is key to being able to visualize complex datasets &mdash; from high level overviews to nitty gritty data details &mdash; allowing users to go up and down the <a href="https://www.toolshero.com/communication-skills/ladder-of-abstraction/" targt="_blank">ladder of abstraction</a> easily.</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Why is the viz idiom design space huge?</h3>
+                    </section>
+
+                    <section>
+                        <p>Although there are just a few standard charts that we as humans are familiar with (e.g. bar, line, pie, scatterplot, etc.), you can combine basic chart types (especially with interaction) and make complex viz idioms.</p>
+                        <p>Like music with the same basic 12 tones, or writing with the same grammar and vocabulary, by combining the basics, you can produce complex data visualizations.</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Why focus on tasks?</h3>
+                    </section>
+
+                    <section>
+                        <p>Because <b>why</b> the user is interacting with the data is important.</p>
+                        <p>Visualizations for exploratory analysis vs for presentation / enjoyment is vastly different.</p>
+                        <p>Are you creating a visualization that is a once-off (to get an idea of the data), putting together a nice presentation to explain insights, or building a tool to automate this process?</p>
+                    </section>
+                </section>
+                
+                <section>
+                    <section>
+                        <h3>Why focus on effectiveness?</h3>
+                    </section>
+
+                    <section>
+                        <p>Because we should measure how effective the visualization is in supporting user tasks.</p>
+                        <p>If you're doing storytelling, the story should be measured on how effective it was as a communication channel.</p>
+                        <p>If you're doing exploratory analysis, what insights have you gained to help aid whatever model you're doing?</p>
+                        <p>If you're doing a tool, how much time / effort have you saved by creating said tool?</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Why are many designs ineffective?</h3>
+                    </section>
+
+                    <section>
+                        <p>I feel Tamara's position here is a little pedantic, but I understand her point of view.</p>
+                        <p>Because there are so many ways to mash-up data and viz idioms, the likelihood you'll get a bad design far outstrips a good one.</p>
+                        <p>Like in the music analogy, you can randomly throw notes together, but it most likely won't make a good song.</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Why is validation difficult?</h3>
+                    </section>
+
+                    <section>
+                        <p>Tamara's argument is that there could be many ways to ask if the visualization has met your user's needs.</p>
+                        <p>Whilst labels like <i>effective communication</i> and <i>insight engagement</i> are not hard science, I believe that this can still be measured (via surveys).</p>
+                        <p>A good user-centric experience design process can help with validating some of these issues. We'll look into this in later parts of the course.</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>What resource limitations are there?</h3>
+                    </section>
+
+                    <section>
+                        <p>Of course there are resource limitations. Tamara states three: Human perceptual / cognitive capacity, computational capacity and display capacity.</p>
+                        <p>Interaction helps solve some of the perceptual / cognitive load, but we're still vulnerable to human quirks like <b>change blindness</b>.</p>
+                        <p>On the technical front, we will be going through some of the limitations of drawing for the web later in the course.</p>
+                    </section>
+                </section>
+								
 
                 <section>
                     <h2>Questions?</h2>
